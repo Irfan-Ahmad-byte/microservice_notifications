@@ -1,8 +1,8 @@
 from fastapi import FastAPI, Depends
 from fastapi.middleware.cors import CORSMiddleware
-from config.config import Config
-from routers import users
-from dependencies import security
+from app.config.config import Config
+from app.routers import users
+from app.dependencies import security
 
 
 app = FastAPI()
@@ -29,4 +29,4 @@ async def root():
 # Run the FastAPI application
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run('main:app', host="0.0.0.0", port=8002, reload=False, log_level="debug")
+    uvicorn.run('app.main:app', host="0.0.0.0", port=8002, reload=False, log_level="debug")
