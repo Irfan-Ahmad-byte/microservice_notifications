@@ -7,17 +7,16 @@ This is a sample microservice, built with FastAPI/Python. This service can b run
 2- through docker compose
 
 
+
 ## Build image and run manually
 
-1- `docker network create --driver bridge microservice-net`
+Execute the `run.sh` script.
 
-2- `docker run -d --name postgresql-server --network microservice-net -e POSTGRESQL_PASSWORD=mysupersecretpassword bitnami/postgresql`
+`chmod +x run.sh`
 
-3- `docker build -t notifications-microservice .`
+`./run.sh`
 
-4- `docker network connect microservice-net notifications-microservice`
-
-5- `docker run -p 8000:8000 notifications-microservice`
+`./stop.sh`
 
 
 ## Run through Docker Compose
